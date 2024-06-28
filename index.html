@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooling Tower Efficiency Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cooling Tower Efficiency Calculator</h1>
+        <form id="coolingTowerForm">
+            <h2>Input Data</h2>
+            <label for="waterFlowRate">Water Flow Rate (GPM or m³/h):</label>
+            <input type="number" id="waterFlowRate" step="0.01" required>
+
+            <label for="deltaT">Delta T (°F or °C):</label>
+            <input type="number" id="deltaT" step="0.01" required>
+
+            <label for="gphr">Gross Plant Heat Rate (GPHR) (MMBTU/MWh or BTU/kWh):</label>
+            <input type="number" id="gphr" step="0.01" required>
+
+            <label for="boilerEfficiency">Boiler Efficiency (η_BOILER) (%):</label>
+            <input type="number" id="boilerEfficiency" step="0.01" required>
+
+            <label for="auxPower">Auxiliary Power (%):</label>
+            <input type="number" id="auxPower" step="0.01" required>
+
+            <label for="concentrationRatio">Cycle of Concentration:</label>
+            <input type="number" id="concentrationRatio" step="0.01" required>
+
+            <label for="driftLossRate">Drift Loss Rate (%):</label>
+            <input type="number" id="driftLossRate" step="0.01" required>
+
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results">
+            <h2>Results</h2>
+            <div id="nphrResult"></div>
+            <div id="evaporationLossResult"></div>
+            <div id="blowdownResult"></div>
+            <div id="driftLossResult"></div>
+            <div id="makeupWaterResult"></div>
+        </div>
+        <div id="charts">
+            <h2>Charts</h2>
+            <canvas id="efficiencyChart"></canvas>
+        </div>
+    </div>
+    <footer>
+        <p>LinkedIn: Muhammad Alfi Syahri</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
